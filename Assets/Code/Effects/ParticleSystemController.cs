@@ -14,9 +14,8 @@ namespace Code.Effects
         private static List<EffectView> effects;
         private static PoolCommonParent _poolCommonParent;
         private static Dictionary<EffectType, ObjectPool<ParticleSystem>> _pools;
-        private static ObjectPool<ParticleSystem> _moleDeadPool;
-
-        private static ObjectPool<ParticleSystem> _moleHidPool;
+        //private static ObjectPool<ParticleSystem> _moleDeadPool;
+        //private static ObjectPool<ParticleSystem> _moleHidPool;
         public static void Initialize(List<EffectView> effectsList, CancellationTokenSource tokenSource)
         {
             _tokenSources = tokenSource;
