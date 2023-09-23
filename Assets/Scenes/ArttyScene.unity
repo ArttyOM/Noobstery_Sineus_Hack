@@ -6473,25 +6473,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 3289564509721286578, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4781073988950278462, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7874635773472049839, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: -0.22199981
-      objectReference: {fileID: 0}
     - target: {fileID: 8295311510976314457, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.24
       objectReference: {fileID: 0}
     - target: {fileID: 8295311510976314457, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.91
+      value: -8.19
       objectReference: {fileID: 0}
     - target: {fileID: 8295311510976314457, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6524,14 +6512,6 @@ PrefabInstance:
     - target: {fileID: 8295311510976314457, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8298021293673801641, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.28400007
-      objectReference: {fileID: 0}
-    - target: {fileID: 8649548860793917734, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
-      propertyPath: damageForceConverter.m_Curve.Array.data[1].value
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
