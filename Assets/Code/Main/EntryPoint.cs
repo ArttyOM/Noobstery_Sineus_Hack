@@ -18,10 +18,12 @@ namespace Code.Main
 
         private void Awake()
         {
+            
             BlockSpawner.Initialize(BlockSpawnerSettings, PoolCommonParent);
             _counterSceneCharacter = new CounterSceneCharacter();
             ScreenSwitcher.Initialize(ScreenServiceList.screens);
             ScreenSwitcher.ShowScreen(ScreenType.Menu);
+            
         }
     }
 }
