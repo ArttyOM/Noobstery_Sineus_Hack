@@ -34,7 +34,7 @@ namespace Code.GameLogic
             foreach (var contact in collision2D.contacts)
             {
                 float currentY = contact.point.y;
-                Debug.Log(contact.point);
+                //Debug.Log(contact.point);
                 if (currentY < minimumY) minimumY = currentY;
             }
             List<float> xPositionsInLowestPoints = new List<float>();
