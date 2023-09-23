@@ -9,10 +9,14 @@ namespace Code.GameLogic
     [RequireComponent(typeof(ObservableCollision2DTrigger))]
     public class Joint2DConnector : MonoBehaviour
     {
+        [SerializeField] private HitPoints _hitPoints;
+        
         private ObservableCollision2DTrigger _observableCollision2d;
         private IDisposable _collision2dSubscription;
+        private IDisposable _connectedBodyAliveSubscription;
 
         private SpringJoint2D _joint2D;
+        
         private void Awake()
         {
             _joint2D = GetComponent<SpringJoint2D>();
@@ -25,10 +29,13 @@ namespace Code.GameLogic
         private void OnDestroy()
         {
             _collision2dSubscription?.Dispose();
+            _connectedBodyAliveSubscription?.Dispose();
         }
-
+        
+        
         private void SetJoint2D(Collision2D collision2D)
         {
+
             float minimumY = collision2D.contacts[0].point.y;
             foreach (var contact in collision2D.contacts)
             {
@@ -56,18 +63,20 @@ namespace Code.GameLogic
             }
 
             _joint2D.connectedBody = oneOflowestContact.rigidbody;
-            _joint2D.enabled = true;
+            _joint2D.enabled = true; 
+            _connectedBodyAliveSubscription = _hitPoints.ObservableDeadStatus
+                .Where(x => x == HitPoints.DamagedStatus.DEAD)
+                .Subscribe(_=>ReinitJoint2d());
 
-            ActivateDamageReceiver();
+
         }
 
-        /// <summary>
-        /// Блоки не должны получать урон от начального падения.
-        /// Поэтому получение урона включаем только после настройки джоинтов
-        /// </summary>
-        private void ActivateDamageReceiver()
+        private void ReinitJoint2d()
         {
-            this.GetComponent<DamageReceiver>().Activate();
+            _collision2dSubscription = _observableCollision2d.OnCollisionEnter2DAsObservable().First()
+                .Subscribe(SetJoint2D);
         }
+
+
     }
 }
