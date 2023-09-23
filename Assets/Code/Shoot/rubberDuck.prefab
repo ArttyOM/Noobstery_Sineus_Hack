@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8149665842027014795}
   - component: {fileID: 342007331600308084}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: rubberDuck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,69 +16,69 @@ public class TypeMissile : MonoBehaviour
     [SerializeField] private int numberOfRes;
     [SerializeField] private int force;
 
-    public enum typeOfMissile
+    public enum TypeOfMissile
     {
-        stone,
-        rubberDuck,
-        core,
-        rocket,
-        cutlery,
-        ray,
-        lemon,
-        shuriken,
-        spear,
-        drone,
-        aliens,
-        octopus,
-        alienRokect,
-        rocket2
+        stone = 0,
+        rubberDuck = 1,
+        core = 2,
+        rocket = 3,
+        cutlery = 4,
+        ray = 5,
+        lemon = 6,
+        shuriken = 7,
+        spear = 8,
+        drone = 9,
+        aliens = 10,
+        octopus = 11,
+        alienRokect = 12,
+        rocket2 = 13
     }
-    public typeOfMissile typeMissile;
+    public TypeOfMissile typeMissile;
 
     private void Update()
     {
         switch(typeMissile)
         {
-            case typeOfMissile.stone:
+            case TypeOfMissile.stone:
                 level = 1; numberOfShells = 1; damage = 2; numberOfRes = 1; force = 1;
                 break;
-            case typeOfMissile.rubberDuck:
+            case TypeOfMissile.rubberDuck:
                 level = 1; numberOfShells = 1; damage = 1; numberOfRes = 1; force = 1;
                 break;
-            case typeOfMissile.core:
+            case TypeOfMissile.core:
                 level = 2; numberOfShells = 1; damage = 4; numberOfRes = 2; force = 2;
                 break;
-            case typeOfMissile.rocket:
+            case TypeOfMissile.rocket:
                 level = 3; numberOfShells = 3; damage = 6; numberOfRes = 2; force = 3;
                 break;
-            case typeOfMissile.cutlery:
+            case TypeOfMissile.cutlery:
                 level = 2; numberOfShells = 10; damage = 1; numberOfRes = 2; force = 3;
                 break;
-            case typeOfMissile.ray:
+            case TypeOfMissile.ray:
                 level = 2; numberOfShells = 1; damage = 10; numberOfRes = 5; force = 4;
                 break;
-            case typeOfMissile.lemon:
+            case TypeOfMissile.lemon:
                 level = 2; numberOfShells = 1; damage = 2; numberOfRes = 4; force = 1;
                 break;
-            case typeOfMissile.shuriken:
+            case TypeOfMissile.shuriken:
                 level = 2; numberOfShells = 3; damage = 1; numberOfRes = 2; force = 2;
                 break;
-            case typeOfMissile.spear:
+            case TypeOfMissile.spear:
                 level = 1; numberOfShells = 1; damage = 1; numberOfRes = 1; force = 1;
                 break;
-            case typeOfMissile.drone:
+            case TypeOfMissile.drone:
                 level = 3; numberOfShells = 1; damage = 4; numberOfRes = 8; force = 2;
                 break;
-            case typeOfMissile.aliens:
+            case TypeOfMissile.aliens:
                 level = 3; numberOfShells = 1; damage = 3; numberOfRes = 15; force = 2;
                 break;
-            case typeOfMissile.octopus:
+            case TypeOfMissile.octopus:
                 level = 1; numberOfShells = 1; damage = 1; numberOfRes = 1; force = 1;
                 break;
-            case typeOfMissile.alienRokect:
+            case TypeOfMissile.alienRokect:
                 level = 3; numberOfShells = 1; damage = 4; numberOfRes = 9; force = 3;
                 break;
-            case typeOfMissile.rocket2:
+            case TypeOfMissile.rocket2:
                 level = 3; numberOfShells = 1; damage = 7; numberOfRes = 6; force = 4;
                 break;
         }

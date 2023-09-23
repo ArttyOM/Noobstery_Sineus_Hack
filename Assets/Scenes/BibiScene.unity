@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTransform: {fileID: 1714604042}
-  bullet: {fileID: 342007331600308084, guid: cdd2e16265d218b4fbdef6e2d4f06119, type: 3}
-  force: 700
+  bullet: {fileID: 342007331600308084, guid: 19337e2f314886845bb2596d89cc0582, type: 3}
+  force: 3400
 --- !u!212 &344209332
 SpriteRenderer:
   m_ObjectHideFlags: 0
