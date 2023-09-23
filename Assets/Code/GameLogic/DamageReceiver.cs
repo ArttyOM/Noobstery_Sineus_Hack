@@ -12,6 +12,8 @@ namespace Code.GameLogic
     {
         [SerializeField] private AnimationCurve damageForceConverter;
         [SerializeField] private bool _shouldLogDamageCalculating = true;
+
+        [SerializeField] private bool _activateOnAwake = true;
         
         private HitPoints _hitPoints;
         
@@ -22,6 +24,11 @@ namespace Code.GameLogic
         {
             _hitPoints = GetComponent<HitPoints>();
 
+            if (_activateOnAwake) Activate();
+        }
+
+        public void Activate()
+        {
             _damageReceiverObservable = InitDamageReceiverObservable();
             _onReceivedDamageSubscription = _damageReceiverObservable
                 .Subscribe(DecreaseHPOnCollision2d);

@@ -29,23 +29,22 @@ namespace Code.GameLogic
 
         private void SetJoint2D(Collision2D collision2D)
         {
-            
             float minimumY = collision2D.contacts[0].point.y;
             foreach (var contact in collision2D.contacts)
             {
                 float currentY = contact.point.y;
-                Debug.Log(contact.point);
+                //Debug.Log(contact.point);
                 if (currentY < minimumY) minimumY = currentY;
             }
-            List<float> xPositionsInLowestPoints = new List<float>();
-            foreach (var contact in collision2D.contacts)
-            {
-                if (contact.point.y <= minimumY + 0.01f)
-                {
-                    xPositionsInLowestPoints.Add(contact.point.x);
-                    
-                }
-            }
+            // List<float> xPositionsInLowestPoints = new List<float>();
+            // foreach (var contact in collision2D.contacts)
+            // {
+            //     if (contact.point.y <= minimumY + 0.01f)
+            //     {
+            //         xPositionsInLowestPoints.Add(contact.point.x);
+            //         
+            //     }
+            // }
             ContactPoint2D oneOflowestContact = default;
             foreach (var contact in collision2D.contacts)
             {
@@ -55,9 +54,20 @@ namespace Code.GameLogic
                     break;
                 }
             }
-            
+
             _joint2D.connectedBody = oneOflowestContact.rigidbody;
             _joint2D.enabled = true;
+
+            ActivateDamageReceiver();
+        }
+
+        /// <summary>
+        /// Блоки не должны получать урон от начального падения.
+        /// Поэтому получение урона включаем только после настройки джоинтов
+        /// </summary>
+        private void ActivateDamageReceiver()
+        {
+            this.GetComponent<DamageReceiver>().Activate();
         }
     }
 }
