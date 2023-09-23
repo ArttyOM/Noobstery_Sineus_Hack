@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 8649548860793917734}
   - component: {fileID: 6066079014780202888}
   - component: {fileID: 2974497736378761739}
+  - component: {fileID: 6328864622217127971}
   m_Layer: 0
   m_Name: BaseCharacter
   m_TagString: Untagged
@@ -309,6 +310,18 @@ MonoBehaviour:
     damageVisual: {fileID: 4781073988950278462}
   - hitPointsLessOrEqualThan: 99
     damageVisual: {fileID: 4741710986853346643}
+--- !u!114 &6328864622217127971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725568314894767830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d86f60e14744e58d085dc385a018e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2126868377207304064
 GameObject:
   m_ObjectHideFlags: 0

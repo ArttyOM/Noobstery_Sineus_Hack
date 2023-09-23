@@ -99,8 +99,8 @@ namespace Code.GameLogic
             float damage = damageForceConverter.Evaluate(receivedDoubledKineticEnergy);
             if (_shouldLogDamageCalculating)
             {
-                Debug.Log($"{gameObject.name} receivedDoubledKineticEnergy = {receivedDoubledKineticEnergy}");
-                Debug.Log($"{gameObject.name} damage = {damage}");
+                //Debug.Log($"{gameObject.name} receivedDoubledKineticEnergy = {receivedDoubledKineticEnergy}");
+                //Debug.Log($"{gameObject.name} damage = {damage}");
             }
 
             return damage;
