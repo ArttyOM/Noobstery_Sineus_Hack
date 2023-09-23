@@ -29,7 +29,6 @@ namespace Code.GameLogic
 
         private void SetJoint2D(Collision2D collision2D)
         {
-            
             float minimumY = collision2D.contacts[0].point.y;
             foreach (var contact in collision2D.contacts)
             {
@@ -58,7 +57,6 @@ namespace Code.GameLogic
 
             _joint2D.connectedBody = oneOflowestContact.rigidbody;
             _joint2D.enabled = true;
-            _joint2D.anchor = oneOflowestContact.point;
 
             ActivateDamageReceiver();
         }
