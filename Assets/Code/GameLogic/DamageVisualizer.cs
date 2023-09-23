@@ -25,7 +25,6 @@ namespace Code.GameLogic
 
         private void OnHpChanged(float newHp)
         {
-            Debug.Log(newHp);
             foreach (var hitPointToDamageVisual in hitPointsToDamageVisualList)
             {
                 if (newHp <= hitPointToDamageVisual.hitPointsLessOrEqualThan)
