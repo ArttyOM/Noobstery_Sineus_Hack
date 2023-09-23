@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Code.DebugTools.Logger;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace Code.GameLogic
     public class Joint2DConnector : MonoBehaviour
     {
         [SerializeField] private HitPoints _hitPoints;
+        [SerializeField] private Vector2 joint2DAnchor = new Vector2(0, -0.5f);
         
         private ObservableCollision2DTrigger _observableCollision2d;
         private IDisposable _collision2dSubscription;
@@ -63,12 +65,13 @@ namespace Code.GameLogic
             }
 
             _joint2D.connectedBody = oneOflowestContact.rigidbody;
-            _joint2D.enabled = true; 
+            _joint2D.enabled = true;
+            oneOflowestContact.point.Colored(Color.gray).Log();
+            _joint2D.anchor = joint2DAnchor;
+            //_joint2D.connectedAnchor =  new Vector2(-2f, -2f);
             _connectedBodyAliveSubscription = _hitPoints.ObservableDeadStatus
                 .Where(x => x == HitPoints.DamagedStatus.DEAD)
                 .Subscribe(_=>ReinitJoint2d());
-
-
         }
 
         private void ReinitJoint2d()
