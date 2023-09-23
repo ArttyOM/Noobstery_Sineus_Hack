@@ -1,13 +1,14 @@
-﻿using Code.DebugTools.Logger;
+﻿using Code.Block;
+using Code.DebugTools.Logger;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Code.HUD.SelectableBlocks
 {
-    public class UIBlockClickHandler : MonoBehaviour
+    public class UIBlockClickHandler : MonoBehaviour, IDragHandler, IBeginDragHandler
     {
         private Camera _camera;
-        private GameObject _selectedObject;
+        private BlockSettings _selectedObject;
         private bool isMouseDown;
 
         private void Start()
@@ -33,9 +34,8 @@ namespace Code.HUD.SelectableBlocks
         
         private void SelectedBlock()
         {
-            if (!gameObject.TryGetComponent<BlockViewSettings>(out var blockSettings)) return;
-            $"12312312312312312321".Colored(Color.cyan).Log();
-            //_selectedObject = Instantiate(blockSettings.SpawnTypeBlock);
+            if (!gameObject.TryGetComponent<BlockUISettings>(out var blockSettings)) return;
+            _selectedObject = BlockSpawner.GetBlock(blockSettings.SpawnTypeBlock, blockSettings.transform.position);
             isMouseDown = true;
         }
     }
