@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTransform: {fileID: 859652315}
-  bullet: {fileID: 2070661836704311299, guid: 3ebb5a0903097504eb045da0e3e35402, type: 3}
+  bullet: {fileID: -7120029208556318513, guid: 3ebb5a0903097504eb045da0e3e35402, type: 3}
   force: 1500
   settings:
   - {fileID: 2619160116756984558, guid: cdd2e16265d218b4fbdef6e2d4f06119, type: 3}
@@ -2447,6 +2447,10 @@ PrefabInstance:
     - target: {fileID: 8298021293673801641, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.28400007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298021293673801641, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.068999924
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
