@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 344209330}
   - component: {fileID: 344209332}
   - component: {fileID: 344209331}
+  - component: {fileID: 344209333}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -325,6 +326,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &344209333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344209329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ed30f500a0a8c42b9916b3fef05c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  numberOfShells: 0
+  damage: 0
+  numberOfRes: 0
+  force: 0
+  typeMissile: 0
 --- !u!1 &483401338
 GameObject:
   m_ObjectHideFlags: 0
