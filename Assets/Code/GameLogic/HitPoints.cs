@@ -1,4 +1,5 @@
 using System;
+using Code.DebugTools.Logger;
 using UniRx;
 using UnityEngine;
 
@@ -26,6 +27,11 @@ namespace Code.GameLogic
         /// </summary>
         public IObservable<DamagedStatus> ObservableDeadStatus => _observableDamagedStatus;
 
+        private void Awake()
+        {
+            _reactiveCurrentHP = new ReactiveProperty<float>(_maxHP);
+        }
+        
         /// <summary>
         /// Смена состояния ХП.
         /// При увеличении - не больше максимального запаса.
@@ -39,7 +45,6 @@ namespace Code.GameLogic
         {
             float newHpValue = _reactiveCurrentHP.Value + value;
             float currentHpValue = _reactiveCurrentHP.Value;
-
             if (newHpValue > _maxHP )
             {
                 if (currentHpValue <= _maxHP)
@@ -67,9 +72,6 @@ namespace Code.GameLogic
             
         }
         
-        private void Awake()
-        {
-            _reactiveCurrentHP = new ReactiveProperty<float>(_maxHP);
-        }
+
     }
 }

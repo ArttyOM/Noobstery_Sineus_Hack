@@ -17,8 +17,7 @@ namespace Code.Main
         private void Awake()
         {
             BlockSpawner.Initialize(BlockSpawnerSettings, PoolCommonParent);
-            ScreenSwitcher.Initialize(ScreenServiceList.screens);
-            ScreenSwitcher.ShowScreen(ScreenType.Menu);
+
         }
     }
 }
