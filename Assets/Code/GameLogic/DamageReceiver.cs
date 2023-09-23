@@ -21,7 +21,10 @@ namespace Code.GameLogic
         private void Awake()
         {
             _hitPoints = GetComponent<HitPoints>();
+        }
 
+        private void Start()
+        {
             Activate();
         }
 
