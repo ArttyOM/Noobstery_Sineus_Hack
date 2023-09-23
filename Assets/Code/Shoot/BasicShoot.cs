@@ -3,22 +3,24 @@ using Code.Pools;
 using Cysharp.Threading.Tasks;
 using System;
 using System.Threading;
+using System.Collections.Generic;
 
 public class BulletSpawner : MonoBehaviour, IDisposable
 {
     [SerializeField] private Transform spawnTransform;
-    [SerializeField] private Collider2D bullet;
+    [SerializeField] public BulletSettings bullet;
     [SerializeField] private float force;
-    private ObjectPool<Collider2D> pool;
+    public List<BulletSettings> settings = new List<BulletSettings>();
+    private ObjectPool<BulletSettings> pool;
     private CancellationTokenSource token;
 
     private void Awake()
     {
-        pool = new ObjectPool<Collider2D>(bullet, null, 30, InitPool);
+        pool = new ObjectPool<BulletSettings>(bullet, null, 30, InitPool);
         token = new CancellationTokenSource();
     }
 
-    private void InitPool(Collider2D collider)
+    private void InitPool(BulletSettings collider)
     {
     }
 
@@ -33,9 +35,13 @@ public class BulletSpawner : MonoBehaviour, IDisposable
     private async void Shot()
     {
         var newBullet = pool.GetObject(spawnTransform.position, Quaternion.identity);
-        newBullet.GetComponent<Rigidbody2D>().AddForce(spawnTransform.right.normalized * force);
+        var bulletRigidbody = newBullet.GetComponent<Rigidbody2D>();
+        bulletRigidbody.AddForce(spawnTransform.right.normalized * force);
+        settings.Add(newBullet);
         await UniTask.Delay(TimeSpan.FromSeconds(5), cancellationToken:token.Token);
+        bulletRigidbody.velocity = new Vector3(0f,0f,0f);
         pool.ReturnObject(newBullet);
+        settings.Remove(newBullet);
     }
 
     public void Dispose()

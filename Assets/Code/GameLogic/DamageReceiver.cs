@@ -13,8 +13,6 @@ namespace Code.GameLogic
         [SerializeField] private AnimationCurve damageForceConverter;
         [SerializeField] private bool _shouldLogDamageCalculating = true;
 
-        [SerializeField] private bool _activateOnAwake = true;
-        
         private HitPoints _hitPoints;
         
         private IObservable<Collision2D> _damageReceiverObservable;
@@ -23,12 +21,16 @@ namespace Code.GameLogic
         private void Awake()
         {
             _hitPoints = GetComponent<HitPoints>();
+        }
 
-            if (_activateOnAwake) Activate();
+        private void Start()
+        {
+            Activate();
         }
 
         public void Activate()
         {
+            //Debug.LogWarning($"{gameObject.name} can receive damdage");
             _damageReceiverObservable = InitDamageReceiverObservable();
             _onReceivedDamageSubscription = _damageReceiverObservable
                 .Subscribe(DecreaseHPOnCollision2d);
@@ -97,8 +99,8 @@ namespace Code.GameLogic
             float damage = damageForceConverter.Evaluate(receivedDoubledKineticEnergy);
             if (_shouldLogDamageCalculating)
             {
-                Debug.Log($"receivedDoubledKineticEnergy = {receivedDoubledKineticEnergy}");
-                Debug.Log($"damage = {damage}");
+                Debug.Log($"{gameObject.name} receivedDoubledKineticEnergy = {receivedDoubledKineticEnergy}");
+                Debug.Log($"{gameObject.name} damage = {damage}");
             }
 
             return damage;
