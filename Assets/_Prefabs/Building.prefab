@@ -247,8 +247,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 100
-      value: 300
+      time: 300
+      value: 100
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -259,6 +259,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _shouldLogDamageCalculating: 1
+  _activateOnAwake: 0
 --- !u!114 &2247366831965719392
 MonoBehaviour:
   m_ObjectHideFlags: 0
