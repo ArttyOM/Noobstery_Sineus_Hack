@@ -6,11 +6,25 @@ namespace Code.GameLogic
 {
     public class HitPoints : MonoBehaviour
     {
+        public enum DamagedStatus
+        {
+            NOT_DAMAGED,
+            DAMAGED,
+            DEAD
+        }
+        
         [SerializeField] private float _maxHP = 100f;
 
         private ReactiveProperty<float> _reactiveCurrentHP;
-        
+        private Subject<DamagedStatus> _observableDamagedStatus = new Subject<DamagedStatus>();
+
         public IObservable<float> ObservableCurrentHP => _reactiveCurrentHP;
+        
+        /// <summary>
+        /// в ивенте true = мертв
+        /// false = перестал быть мертвым
+        /// </summary>
+        public IObservable<DamagedStatus> ObservableDeadStatus => _observableDamagedStatus;
 
         /// <summary>
         /// Смена состояния ХП.
@@ -23,16 +37,34 @@ namespace Code.GameLogic
         /// </param>
         public void ChangeHP(float value)
         {
-            float sum = _reactiveCurrentHP.Value + value;
-            if (sum > _maxHP )
+            float newHpValue = _reactiveCurrentHP.Value + value;
+            float currentHpValue = _reactiveCurrentHP.Value;
+
+            if (newHpValue > _maxHP )
             {
-                _reactiveCurrentHP.Value = _maxHP;
+                if (currentHpValue <= _maxHP)
+                {
+                    _reactiveCurrentHP.Value = _maxHP;
+                    _observableDamagedStatus.OnNext(DamagedStatus.NOT_DAMAGED);
+                }
             }
-            else if (sum <= 0f)
+            else if (newHpValue <= 0f)
             {
-                _reactiveCurrentHP.Value = 0f;
+                if (currentHpValue > 0f)
+                {
+                    _reactiveCurrentHP.Value = 0f;
+                    _observableDamagedStatus.OnNext(DamagedStatus.DEAD);
+                }
             }
-            _reactiveCurrentHP.Value += value;
+            else
+            {
+                if (currentHpValue <= 0 || currentHpValue > _maxHP) 
+                {
+                    _observableDamagedStatus.OnNext(DamagedStatus.DAMAGED);
+                }
+                _reactiveCurrentHP.Value += value;
+            }
+            
         }
         
         private void Awake()

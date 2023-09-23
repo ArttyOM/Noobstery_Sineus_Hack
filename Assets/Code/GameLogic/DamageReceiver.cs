@@ -10,7 +10,6 @@ namespace Code.GameLogic
     [RequireComponent(typeof(HitPoints))]
     public class DamageReceiver : MonoBehaviour
     {
-        [SerializeField] private GameObject damagedVisual;
         [SerializeField] private AnimationCurve damageForceConverter;
         [SerializeField] private bool _shouldLogDamageCalculating = true;
         
