@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTransform: {fileID: 859652315}
-  bullet: {fileID: -7120029208556318513, guid: 3ebb5a0903097504eb045da0e3e35402, type: 3}
+  bullet: {fileID: -7242059239640041369, guid: 50f7c6ede0fb2eb44ad2ae2215d63e70, type: 3}
   force: 1500
   settings:
   - {fileID: 2619160116756984558, guid: cdd2e16265d218b4fbdef6e2d4f06119, type: 3}
