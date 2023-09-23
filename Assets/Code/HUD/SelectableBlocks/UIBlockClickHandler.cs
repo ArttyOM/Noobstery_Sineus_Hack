@@ -1,5 +1,5 @@
-﻿using Code.Block;
-using Code.DebugTools.Logger;
+﻿using System;
+using Code.Block;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,13 +9,26 @@ namespace Code.HUD.SelectableBlocks
     {
         private Camera _camera;
         private BlockSettings _selectedObject;
+        private Collider2D _selectCollider;
+        private Rigidbody2D _selectRigidBody;
         private bool isMouseDown;
 
         private void Start()
         {
             _camera = Camera.main;
         }
-        
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonUp(0) && isMouseDown)
+            {
+                isMouseDown = false;
+                _selectedObject = null;
+                _selectCollider.enabled = true;
+                _selectRigidBody.isKinematic = false;
+            }
+        }
+
         public void OnBeginDrag(PointerEventData eventData)
         {
             SelectedBlock();
@@ -36,6 +49,10 @@ namespace Code.HUD.SelectableBlocks
         {
             if (!gameObject.TryGetComponent<BlockUISettings>(out var blockSettings)) return;
             _selectedObject = BlockSpawner.GetBlock(blockSettings.SpawnTypeBlock, blockSettings.transform.position);
+            _selectCollider = _selectedObject.GetComponent<Collider2D>();
+            _selectRigidBody = _selectedObject.GetComponent<Rigidbody2D>();
+            _selectCollider.enabled = false;
+            _selectRigidBody.isKinematic = true;
             isMouseDown = true;
         }
     }
