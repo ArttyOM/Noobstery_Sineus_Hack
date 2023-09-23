@@ -14,6 +14,7 @@ namespace Code.Main
         private void Awake()
         {
             BlockSpawner.Initialize(BlockSpawnerSettings, PoolCommonParent);
+
         }
     }
 }
