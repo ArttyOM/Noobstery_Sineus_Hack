@@ -298,6 +298,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 31474082}
     m_Modifications:
+    - target: {fileID: 3106833441827937987, guid: 369aa12e57a057d4bbe43faf1ea0eb3c, type: 3}
+      propertyPath: pitStopTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7258542618740828561, guid: 369aa12e57a057d4bbe43faf1ea0eb3c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.13
@@ -3051,7 +3055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4027380986544176713, guid: d441f8989393f674ea8ca7c7669d436c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8825436448177257621, guid: d441f8989393f674ea8ca7c7669d436c, type: 3}
       propertyPath: m_LocalPosition.x
