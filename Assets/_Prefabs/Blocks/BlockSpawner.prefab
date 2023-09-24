@@ -48,16 +48,16 @@ MonoBehaviour:
   <Configs>k__BackingField:
   - <Name>k__BackingField: ClayBlock
     <Type>k__BackingField: 0
-    <Image>k__BackingField: {fileID: 5849612072879106774, guid: 041ee6d92b0409840ab12c6eca56f221, type: 3}
+    <Image>k__BackingField: {fileID: 21300000, guid: e2ca268990bc4074dbf1c2d12639165a, type: 3}
     <Health>k__BackingField: 10
     <Price>k__BackingField: 3
   - <Name>k__BackingField: StoneBlock
     <Type>k__BackingField: 1
-    <Image>k__BackingField: {fileID: -3027771908881435711, guid: b1763dca76132a145bfb6f78ff3a1548, type: 3}
+    <Image>k__BackingField: {fileID: 21300000, guid: 8f0eaf53f186615489d4600ed267401f, type: 3}
     <Health>k__BackingField: 15
     <Price>k__BackingField: 4
   - <Name>k__BackingField: BrickBlock
     <Type>k__BackingField: 2
-    <Image>k__BackingField: {fileID: 3481594797983888776, guid: 041ee6d92b0409840ab12c6eca56f221, type: 3}
+    <Image>k__BackingField: {fileID: 21300000, guid: 88a37358b0aa1df4bb0ea146e067d0de, type: 3}
     <Health>k__BackingField: 20
     <Price>k__BackingField: 5

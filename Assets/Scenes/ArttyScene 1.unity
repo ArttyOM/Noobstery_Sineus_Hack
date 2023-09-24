@@ -1041,7 +1041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874635773472049839, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.22199981
+      value: -0.21199997
       objectReference: {fileID: 0}
     - target: {fileID: 8295311510976314457, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1085,7 +1085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298021293673801641, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.28400007
+      value: 0.182
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2324,7 +2324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874635773472049839, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.22199996
+      value: -0.2119999
       objectReference: {fileID: 0}
     - target: {fileID: 8295311510976314457, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2368,7 +2368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298021293673801641, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.284
+      value: 0.18200016
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2777,7 +2777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7874635773472049839, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.22199996
+      value: -0.21199997
       objectReference: {fileID: 0}
     - target: {fileID: 8295311510976314457, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2821,7 +2821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8298021293673801641, guid: f67189a22bd3da3429a9930d5161632a, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.284
+      value: 0.18200009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
