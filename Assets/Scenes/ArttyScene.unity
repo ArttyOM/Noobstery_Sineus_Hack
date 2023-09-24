@@ -2344,6 +2344,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Closed Sprite Shape
       objectReference: {fileID: 0}
+    - target: {fileID: 5880819689156933458, guid: 50a9ca5a2dd996f4684aed23623afd7b, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[21].x
+      value: 33.88783
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880819689156933458, guid: 50a9ca5a2dd996f4684aed23623afd7b, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[41].y
+      value: 19.778332
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880819689156933458, guid: 50a9ca5a2dd996f4684aed23623afd7b, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[72].y
+      value: -2.3718817
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880819689156933458, guid: 50a9ca5a2dd996f4684aed23623afd7b, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[73].y
+      value: -2.0051222
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880819689156933458, guid: 50a9ca5a2dd996f4684aed23623afd7b, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[80].y
+      value: 2.7961483
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880819689156933458, guid: 50a9ca5a2dd996f4684aed23623afd7b, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[81].y
+      value: 3.7788224
+      objectReference: {fileID: 0}
     - target: {fileID: 6729967306653580086, guid: 50a9ca5a2dd996f4684aed23623afd7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17
@@ -2536,6 +2560,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 310708907}
     m_Modifications:
+    - target: {fileID: 1377724442380719909, guid: 369aa12e57a057d4bbe43faf1ea0eb3c, type: 3}
+      propertyPath: force
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 2503123234143597056, guid: 369aa12e57a057d4bbe43faf1ea0eb3c, type: 3}
+      propertyPath: force
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275421631852909586, guid: 369aa12e57a057d4bbe43faf1ea0eb3c, type: 3}
+      propertyPath: force
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7258542618740828561, guid: 369aa12e57a057d4bbe43faf1ea0eb3c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.13
