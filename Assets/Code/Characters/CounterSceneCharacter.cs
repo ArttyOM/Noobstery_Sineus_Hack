@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Code.DebugTools.Logger;
 using Code.GameLogic;
 using Code.HUD.CharacterCounter;
@@ -16,16 +15,15 @@ namespace Code.Characters
         private readonly CharacterCount _characterCount;
         private int _countCharacters;
 
-        public CounterSceneCharacter(TextMeshProUGUI textMeshProUGUI)
+        public CounterSceneCharacter(TextMeshProUGUI textMeshProUGUI, CharacterMarker[] character)
         {
             _hitPoints = new List<HitPoints>();
-            var characters = Object.FindObjectsOfType<CharacterMarker>();
-            _characterCount = new CharacterCount(textMeshProUGUI, characters.Length);
-            _countCharacters = characters.Length;
-            
-            for (int i = 0; i < characters.Length; i++)
+            var character1 = character;
+            _characterCount = new CharacterCount(textMeshProUGUI, character1.Length);
+
+            for (int i = 0; i < character1.Length; i++)
             {
-                _hitPoints.Add(characters[i].HitPoints);
+                _hitPoints.Add(character1[i].HitPoints);
                 _countCharacters++;
             }
 
@@ -45,6 +43,5 @@ namespace Code.Characters
             _characterCount.ChangeCounter(_hitPoints.Count);
             _countCharacters--;
         }
-        
     }
 }

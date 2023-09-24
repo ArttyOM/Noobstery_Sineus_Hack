@@ -52,12 +52,12 @@ MonoBehaviour:
     <Health>k__BackingField: 10
     <Price>k__BackingField: 3
   - <Name>k__BackingField: StoneBlock
-    <Type>k__BackingField: 3
+    <Type>k__BackingField: 1
     <Image>k__BackingField: {fileID: -3027771908881435711, guid: b1763dca76132a145bfb6f78ff3a1548, type: 3}
     <Health>k__BackingField: 15
     <Price>k__BackingField: 4
   - <Name>k__BackingField: BrickBlock
-    <Type>k__BackingField: 6
+    <Type>k__BackingField: 2
     <Image>k__BackingField: {fileID: 3481594797983888776, guid: 041ee6d92b0409840ab12c6eca56f221, type: 3}
     <Health>k__BackingField: 20
     <Price>k__BackingField: 5

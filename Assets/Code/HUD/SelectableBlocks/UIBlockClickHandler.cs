@@ -7,6 +7,9 @@ namespace Code.HUD.SelectableBlocks
 {
     public class UIBlockClickHandler : MonoBehaviour, IDragHandler, IBeginDragHandler
     {
+        [SerializeField]
+        private PriceBlock _priceBlock;
+
         private Camera _camera;
         private BlockSettings _selectedObject;
         private Collider2D _selectCollider;
@@ -33,22 +36,27 @@ namespace Code.HUD.SelectableBlocks
         {
             SelectedBlock();
         }
-        
+
         public void OnDrag(PointerEventData eventData)
         {
             if (isMouseDown)
             {
-                if(!_selectedObject) return;
+                if (!_selectedObject) return;
                 var mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
                 mousePosition.z = 0;
                 _selectedObject.transform.position = mousePosition;
             }
         }
-        
+
         private void SelectedBlock()
         {
             if (!gameObject.TryGetComponent<BlockUISettings>(out var blockSettings)) return;
-            _selectedObject = BlockSpawner.GetBlock(blockSettings.SpawnTypeBlock, blockSettings.transform.position);
+            if (blockSettings.BlockConfig.PriceBlock > _priceBlock._currentResources) return;
+            
+            _priceBlock.DecreaseResources(blockSettings.BlockConfig.PriceBlock);
+
+            _selectedObject = BlockSpawner.GetBlock(blockSettings.BlockConfig.SpawnTypeBlock,
+                blockSettings.transform.position);
             _selectCollider = _selectedObject.GetComponent<Collider2D>();
             _selectRigidBody = _selectedObject.GetComponent<Rigidbody2D>();
             _selectCollider.enabled = false;
