@@ -909,7 +909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &645135039
 Transform:
   m_ObjectHideFlags: 0
@@ -928,6 +928,17 @@ Transform:
   - {fileID: 1659198551}
   m_Father: {fileID: 310708907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673136689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 627841393247527134, guid: ed44fcbfe30d78948a0b7fa83c1c260b, type: 3}
+  m_PrefabInstance: {fileID: 1110679265853237656}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b413040fa349f38271816e7c27e1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &729937524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,15 +1393,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &873664449 stripped
+--- !u!114 &873664452 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4988716813985112416, guid: ed44fcbfe30d78948a0b7fa83c1c260b, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2048618823274613758, guid: ed44fcbfe30d78948a0b7fa83c1c260b, type: 3}
   m_PrefabInstance: {fileID: 1110679265853237656}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 78fd61d716df4807bac9af8fe399f860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &964663205
@@ -2713,9 +2724,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 964663206}
     m_Modifications:
     - target: {fileID: 2002583105685127792, guid: 73ba942fac8c9744ca09ca129d84c025, type: 3}
-      propertyPath: <TextMeshProUGUI>k__BackingField
+      propertyPath: <PriceSettings>k__BackingField
       value: 
-      objectReference: {fileID: 873664449}
+      objectReference: {fileID: 673136689}
     - target: {fileID: 2002583105685127792, guid: 73ba942fac8c9744ca09ca129d84c025, type: 3}
       propertyPath: <PoolCommonParent>k__BackingField
       value: 
@@ -2728,6 +2739,10 @@ PrefabInstance:
       propertyPath: <BlockSpawnerSettings>k__BackingField
       value: 
       objectReference: {fileID: 1189681380}
+    - target: {fileID: 2002583105685127792, guid: 73ba942fac8c9744ca09ca129d84c025, type: 3}
+      propertyPath: <CharacterCounterView>k__BackingField
+      value: 
+      objectReference: {fileID: 873664452}
     - target: {fileID: 4129114346521421050, guid: 73ba942fac8c9744ca09ca129d84c025, type: 3}
       propertyPath: m_Name
       value: '[LEVEL]'
