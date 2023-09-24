@@ -34,7 +34,9 @@ namespace Code.Characters
                     .Subscribe(_ => ReductionLiveCharacters(hitPoint));
             }
         }
-
+        
+        public CharacterCount CharacterCount => _characterCount;
+        
         private void ReductionLiveCharacters(HitPoints hitPoints)
         {
             _hitPoints.Remove(hitPoints);

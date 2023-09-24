@@ -1,14 +1,20 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using TMPro;
+using UniRx;
 using UnityEngine;
 
 namespace Code.HUD.CharacterCounter
 {
     public class CharacterCount
     {
+        private Subject<bool> _onGameOver = new Subject<bool>();
+
         private readonly TextMeshProUGUI _textMeshProUGUI;
         private readonly StringBuilder _stringBuilder;
         private readonly int _maxCount;
+
+        public IObservable<bool> OnGameOver => _onGameOver;
 
         public CharacterCount(TextMeshProUGUI textMeshProUGUI, int maxCount)
         {
@@ -34,6 +40,7 @@ namespace Code.HUD.CharacterCounter
             {
                 Time.timeScale = 0;
                 ScreenSwitcher.ShowScreen(ScreenType.Defeat);
+                _onGameOver.OnNext(true);
             }
         }
     }

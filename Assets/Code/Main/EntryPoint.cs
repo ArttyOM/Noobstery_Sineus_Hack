@@ -33,5 +33,10 @@ namespace Code.Main
             ScreenSwitcher.Initialize(ScreenServiceList.screens);
             ScreenSwitcher.ShowScreen(ScreenType.Menu);
         }
+
+        public IObservable<bool> getGameOverEvents()
+        {
+            return _counterSceneCharacter.CharacterCount.OnGameOver;
+        }
     }
 }
