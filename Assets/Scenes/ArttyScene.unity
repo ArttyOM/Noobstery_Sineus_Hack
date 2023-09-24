@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821178878}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75dc762a292d82642be97f863dce0ced, type: 3}
   m_Name: 
@@ -1162,8 +1162,6 @@ MonoBehaviour:
   spawnTransform: {fileID: 859652315}
   bullet: {fileID: 5590759816094989517, guid: 39a4908fd670f03409944d6126f133fd, type: 3}
   force: 1500
-  settings:
-  - {fileID: 2619160116756984558, guid: cdd2e16265d218b4fbdef6e2d4f06119, type: 3}
 --- !u!212 &821178882
 SpriteRenderer:
   m_ObjectHideFlags: 0
