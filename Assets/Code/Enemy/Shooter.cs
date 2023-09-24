@@ -3,9 +3,8 @@ using System.Threading;
 using Code.DebugTools.Logger;
 using Cysharp.Threading.Tasks;
 using UniRx;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
-using Random = UnityEngine.Random;
+
 
 namespace Code.Enemy
 {
