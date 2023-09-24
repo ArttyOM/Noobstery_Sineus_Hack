@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dad4ef0cfd642908df81a75848f1dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DefaultSpawnObject>k__BackingField: {fileID: -6814843497182697846, guid: b4065e547f484d940914408f155d5b84, type: 3}
+  <DefaultSpawnObject>k__BackingField: {fileID: 394002465472524828, guid: 79985e86ca448d2449dbe2ca89442ee9, type: 3}
   <Configs>k__BackingField:
   - <Name>k__BackingField: ClayBlock
     <Type>k__BackingField: 0

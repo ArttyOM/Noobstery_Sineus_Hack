@@ -16,6 +16,7 @@ namespace Code.Block
         public void SetImage(Sprite spriteRenderer)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteRenderer;
+            SetSizeCollider(spriteRenderer);
         }
         
         public void SetHealth(int health)
@@ -23,13 +24,9 @@ namespace Code.Block
             Health = health;
         }
 
-        public void ChangeHealth(int GetDamage)
+        private void SetSizeCollider(Sprite spriteRenderer)
         {
-            Health -= GetDamage;
-            if (Health <= 0)
-            {
-                BlockSpawner.ReturnToPool(this);
-            }
+            gameObject.GetComponent<BoxCollider2D>().size = spriteRenderer.bounds.size;
         }
     }
 }
