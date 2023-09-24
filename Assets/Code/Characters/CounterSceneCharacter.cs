@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Code.DebugTools.Logger;
 using Code.GameLogic;
+using Code.HUD.CharacterCounter;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -11,33 +12,36 @@ namespace Code.Characters
     public class CounterSceneCharacter
     {
         private readonly List<HitPoints> _hitPoints;
-        public int CountCharacters { get; private set; }
+        private readonly CharacterCount _characterCount;
+        private int _countCharacters;
 
-        public CounterSceneCharacter()
+        public CounterSceneCharacter(TextMeshProUGUI textMeshProUGUI, CharacterMarker[] character)
         {
             _hitPoints = new List<HitPoints>();
-            var characters = Object.FindObjectsOfType<CharacterMarker>();
+            var character1 = character;
+            _characterCount = new CharacterCount(textMeshProUGUI, character1.Length);
 
-            for (int i = 0; i < characters.Length; i++)
+            for (int i = 0; i < character1.Length; i++)
             {
-                characters[i].HitPoints.ObservableDeadStatus
+                _hitPoints.Add(character1[i].HitPoints);
+                _countCharacters++;
+            }
+
+            foreach (var hitPoint in _hitPoints)
+            {
+                hitPoint.ObservableDeadStatus
                     .Where(x => x == HitPoints.DamagedStatus.DEAD)
-                    .Subscribe(_ => ReductionLiveCharacters());
-                
-                IncreaseInLiveCharacters();
-                _hitPoints.Add(characters[i].HitPoints);
+                    .Subscribe(_ => ReductionLiveCharacters(hitPoint));
             }
         }
-
-        public void IncreaseInLiveCharacters()
+        
+        public CharacterCount CharacterCount => _characterCount;
+        
+        private void ReductionLiveCharacters(HitPoints hitPoints)
         {
-            CountCharacters++;
-        }
-
-        public void ReductionLiveCharacters()
-        {
-            $"11111111111111".Colored(Color.cyan).Log();
-            CountCharacters--;
+            _hitPoints.Remove(hitPoints);
+            _characterCount.ChangeCounter(_hitPoints.Count);
+            _countCharacters--;
         }
     }
 }

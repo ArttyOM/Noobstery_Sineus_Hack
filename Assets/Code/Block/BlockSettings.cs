@@ -8,8 +8,6 @@ namespace Code.Block
     {
         public BlockType Type { get; private set; }
         public int Health { get; private set; }
-        public int Price { get; private set; }
-        //
 
         public void SetType(BlockType type)
         {
@@ -23,11 +21,6 @@ namespace Code.Block
         public void SetHealth(int health)
         {
             Health = health;
-        }
-
-        public void SetPrice(int price)
-        {
-            Price = price;
         }
 
         public void ChangeHealth(int GetDamage)
