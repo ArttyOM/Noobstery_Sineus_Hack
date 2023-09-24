@@ -487,6 +487,8 @@ Transform:
   - {fileID: 534210860}
   - {fileID: 294229405}
   - {fileID: 1435720525}
+  - {fileID: 1772640992}
+  - {fileID: 645135039}
   - {fileID: 973119406}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1869,6 +1871,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+
 --- !u!1 &1827501219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,9 +2047,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+
     - target: {fileID: 3802086873058032586, guid: ed44fcbfe30d78948a0b7fa83c1c260b, type: 3}
       propertyPath: m_IsActive
       value: 0
+
       objectReference: {fileID: 0}
     - target: {fileID: 3944493654607415666, guid: ed44fcbfe30d78948a0b7fa83c1c260b, type: 3}
       propertyPath: m_Pivot.x
@@ -2180,6 +2185,7 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+
     - target: {fileID: 5676674166259607213, guid: ed44fcbfe30d78948a0b7fa83c1c260b, type: 3}
       propertyPath: m_Type
       value: 0
@@ -2653,6 +2659,7 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 310708907}
     m_Modifications:
+
     - target: {fileID: 1377724442380719909, guid: 369aa12e57a057d4bbe43faf1ea0eb3c, type: 3}
       propertyPath: force
       value: 700
