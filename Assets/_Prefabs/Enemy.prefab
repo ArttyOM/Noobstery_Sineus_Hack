@@ -281,6 +281,7 @@ MonoBehaviour:
   switchTime: 3
   bulletPrefab: {fileID: 2070661836704311299, guid: 3ebb5a0903097504eb045da0e3e35402, type: 3}
   spawnTransform: {fileID: 1671651237420076811}
+  force: 700
   activeBullets: []
 --- !u!1 &2842907148270303976
 GameObject:
@@ -331,6 +332,7 @@ MonoBehaviour:
   switchTime: 3
   bulletPrefab: {fileID: -5954882380596378108, guid: 02c87278e5cf3ff40b8e57daa89ba15a, type: 3}
   spawnTransform: {fileID: 1671651237420076811}
+  force: 700
   activeBullets: []
 --- !u!1 &2888128637351870771
 GameObject:
@@ -504,7 +506,7 @@ Transform:
   m_GameObject: {fileID: 3838342645845915866}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.16333, y: -0.8800002, z: 0}
+  m_LocalPosition: {x: 82.16333, y: 7.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -608,7 +610,7 @@ Transform:
   m_GameObject: {fileID: 4774750465020216570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 110.49666, y: -1.7133335, z: 0}
+  m_LocalPosition: {x: 110.49666, y: 9.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -694,6 +696,7 @@ MonoBehaviour:
   switchTime: 3
   bulletPrefab: {fileID: 0}
   spawnTransform: {fileID: 1671651237420076811}
+  force: 700
   activeBullets: []
 --- !u!1 &6085826296678514290
 GameObject:
@@ -1118,6 +1121,7 @@ MonoBehaviour:
   switchTime: 3
   bulletPrefab: {fileID: 5590759816094989517, guid: 39a4908fd670f03409944d6126f133fd, type: 3}
   spawnTransform: {fileID: 1671651237420076811}
+  force: 700
   activeBullets: []
 --- !u!1 &7418128187860857506
 GameObject:
@@ -1213,7 +1217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponsParent: {fileID: 6846050464533764277}
-  initDelay: 1
+  initDelay: 0.8
 --- !u!1 &9196240733474569234
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,12 +26,26 @@ namespace Code.HUD.GameTimer
         {
             _currentTime += Time.deltaTime;
             int seconds = Mathf.FloorToInt(_currentTime);
-            _stringBuilder.Clear();
-            _stringBuilder.Append(seconds);
-            
-            foreach (var timerText in TimerTexts)
+
+
+            for (int i = 0; i < TimerTexts.Count; i++)
             {
-                timerText.text = _stringBuilder.ToString();
+                if (i == 0)
+                {
+                    _stringBuilder.Clear();
+                    _stringBuilder.Append(seconds);
+                    TimerTexts[i].text = _stringBuilder.ToString();
+                }
+                
+                else
+                {
+                    _stringBuilder.Clear();
+                    _stringBuilder.Append("Вы продержались ");
+                    _stringBuilder.Append(seconds);
+                    _stringBuilder.Append(" секунд");
+                    TimerTexts[i].text = _stringBuilder.ToString();
+                }
+                
             }
         }
     }
