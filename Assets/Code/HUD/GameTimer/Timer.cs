@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Code.DebugTools.Logger;
 using TMPro;
 using UnityEngine;
 
@@ -8,12 +9,11 @@ namespace Code.HUD.GameTimer
 {
     public class Timer : MonoBehaviour
     {
-        [field: SerializeField] public List<TextMeshPro> TimerTexts { get; private set; }
+        [SerializeField] private List<TextMeshProUGUI> TimerTexts;
         private StringBuilder _stringBuilder;
         private float _currentTime;
         private void Awake()
         {
-            TimerTexts = new List<TextMeshPro>();
             _stringBuilder = new StringBuilder();
         }
 
@@ -24,17 +24,15 @@ namespace Code.HUD.GameTimer
 
         private void Countdown()
         {
-                            
-            _currentTime -= Time.deltaTime;
-
+            _currentTime += Time.deltaTime;
             int seconds = Mathf.FloorToInt(_currentTime);
+            _stringBuilder.Clear();
+            _stringBuilder.Append(seconds);
+            
             foreach (var timerText in TimerTexts)
             {
-                _stringBuilder.Clear();
-                _stringBuilder.Append(seconds);
                 timerText.text = _stringBuilder.ToString();
             }
-            
         }
     }
 }
