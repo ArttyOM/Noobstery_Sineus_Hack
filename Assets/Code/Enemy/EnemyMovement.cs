@@ -22,7 +22,7 @@ namespace Code.Enemy
         {
             _points = movementPointsParent.GetComponentsInChildren<Transform>();
             
-            _points.Length.Colored(Color.green).Log();
+            //_points.Length.Colored(Color.green).Log();
             Observable.Interval(TimeSpan.FromSeconds(pitStopTime))
                 .Subscribe(i =>
                 {
