@@ -20,6 +20,7 @@ namespace Code.Enemy
         [SerializeField] public float switchTime = 3f;
         [SerializeField] public BulletMarker bulletPrefab;
         [SerializeField] private Transform spawnTransform;
+        [SerializeField] private float force = 700f;
         
         private CancellationTokenSource token;
         private ReactiveProperty<int> ammoCapasityObservable;
@@ -57,8 +58,10 @@ namespace Code.Enemy
             $"{this.name} is firing".Colored(Color.red).Log();
             var newBullet = pool.GetObject(spawnTransform.position, Quaternion.identity);
             activeBullets.Add(newBullet);
+            var bulletRigidbody = newBullet.GetComponent<Rigidbody2D>();
+            bulletRigidbody.AddForce(spawnTransform.right.normalized * force);
             await UniTask.Delay(TimeSpan.FromSeconds(5), cancellationToken:token.Token);
-            
+            bulletRigidbody.velocity = new Vector3(0f,0f,0f);
             pool.ReturnObject(newBullet);
             activeBullets.Remove(newBullet);
         }
