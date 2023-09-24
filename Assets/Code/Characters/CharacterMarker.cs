@@ -7,11 +7,6 @@ namespace Code.Characters
     [DisallowMultipleComponent]
     public class CharacterMarker : MonoBehaviour
     {
-        public HitPoints HitPoints { get; private set; }
-
-        private void Awake()
-        {
-            HitPoints = GetComponent<HitPoints>();
-        }
+        [field: SerializeField] public HitPoints HitPoints { get; private set; }
     }
 }
