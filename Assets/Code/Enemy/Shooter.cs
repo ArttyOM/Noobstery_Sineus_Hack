@@ -4,7 +4,7 @@ using Code.DebugTools.Logger;
 using Cysharp.Threading.Tasks;
 using UniRx;
 using UnityEngine;
-using Random = UnityEngine.Random;
+
 
 namespace Code.Enemy
 {
