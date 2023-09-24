@@ -48,7 +48,6 @@ namespace Code.Block
                     receivedBlock.name = config.Name;
                     receivedBlock.SetType(config.Type);
                     receivedBlock.SetImage(config.Image);
-                    receivedBlock.SetPrice(config.Price);
                     receivedBlock.SetHealth(config.Health);
                 }
             }
