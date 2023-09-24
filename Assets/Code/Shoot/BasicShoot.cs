@@ -6,6 +6,7 @@ using System.Threading;
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine.Serialization;
+using Code.Enemy;
 
 public class BulletSpawner : MonoBehaviour, IDisposable
 {
